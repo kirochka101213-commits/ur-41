@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Share+Tech&display=swap" rel="stylesheet">
+    <style>
+        :root {
+         --temn: #23022E;
+          --switl: #573280;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            border: none;
+            background-color: rgb(233, 127, 207);
+            color: var(--temn);
+            font-family: "Michroma", sans-serif;
+            
+        }
+
+        h2 {
+            font-family: "Michroma", sans-serif;
+            color: var(--switl);
+        }
+
+        h1 {
+            color: var(--switl);
+            font-family: "Michroma", sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: "Share Tech", sans-serif;
+            color: var(--temn);
+        }
+
+        body {
+            background-color: #d8a7ca;
+        }
+        .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 400px;
+            min-height: 200px;
+            padding: 24px;
+            background-color: #c7b8ea;
+            border-radius: 8px;
+            color: var(--temn);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+         .modal input {
+            border: none;
+            background-color: ;
+            background-color: rgb(222, 99, 185);
+            color: var(--temn);
+            height: 30px;
+            width: 170px;;
+            border-radius: 10px;
+         }
+
+         ::placeholder {
+            color: var(--temn);
+            font-family: "Share Tech", sans-serif;
+         }
+
+        h3 {
+            color: var(--switl);
+            font-family: "Michroma", sans-serif;
+        }
+
+        .modal h4 {
+            color: var(--temn);
+            font-family: "Share Tech", sans-serif;
+        }
+
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #EFF8E2(239, 248, 226,);
+            z-index: 100;
+        }
+
+        .backdrop.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .b {
+            color: var(--temn);
+            font-family: "Share Tech", sans-serif;
+        }
+
+        .oh {
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+            gap: 20px;
+        }
+
+        .me {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 100px;
+
+        }
+        .imeg {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .but1 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .clas {
+            width: 370px;
+            height: 450px;
+            background-color: rgb(222, 99, 185);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .clas p {
+            word-wrap: normal;
+            text-align: center;
+            color: var(--temn);
+            font-family: "Share Tech", sans-serif;
+        }
+
+        .kak {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 5px;
+        }
+
+        .kak img {
+            width: 300px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .kak h3 {
+            text-align: center;
+        }
+
+        .tat {
+            text-align: justify;
+            color: var(--temn);
+            font-family: "Share Tech", sans-serif;
+        }
+
+        .istoriya {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            gap: 20px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .krest {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logotip.jpg" alt="">
+        <ul>
+            <li><a href="#GolovniEkran">Головний екран</a></li>
+            <li><a href="#galereya">Галерея робіт</a></li>
+            <li><a href="#masterClassi">Майстер-класи</a></li>
+            <li><a href="#istoriya">Наша історія</a></li>
+            <li><a href="#kontakts">Контакти</a></li>
+        </ul>
+    </header>
+    <main>
+        <article id="GolovniEkran">
+            <div class="me">
+            <div class="oh">
+            <h1>ArtSpace</h1>
+            <h3 class="b">ArtSpace: Простір для натхнення та майстерності.</h3>
+            <button data-modal-open>Приєднатися до нас</button>
+            </div>
+            <img src="images/DlaFonu.jpg" alt="">
+            </div>
+            <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+            <button data-modal-close class="krest">✕</button>
+            <h3>Зареєструйтесь або увійдіть в акаунт</h3>
+            <div>
+            <h4>Зареєструйтесь</h4>
+            <form action="">
+            <input type="email" placeholder="введіть Email">
+            <input type="text" placeholder="Введіть своє ім'я">
+            <input type="password" placeholder="Придумайте пароль">
+            <button type="submit">Зареєструватись</button>
+            </form>
+            </div>
+            <div>
+                <h4>Увійти в акаунт</h4>
+                <form action="">
+                    <input type="password" placeholder="Введіть Email">
+                    <button type="submit">Увійти в акаунт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </article>
+
+        <article id="galereya">
+            <h2>Галерея робіт</h2>
+            <div class="imeg">
+            <img src="images/glina1.jpg" alt="">
+            <img src="images/glina2.jpg" alt="">
+            <img src="images/glina3.jpg" alt="">
+            <img src="images/kartina1.jpg" alt="">
+            <img src="images/kartina2.jpg" alt="">
+            <img src="images/papye1.jpg" alt="">
+            </div>
+            <button data-modal-open2 class="but1">Більше робіт</button>
+            <div class="backdrop is-hidden" data-modal2>
+            <div class="modal">
+            <button data-modal-close2 class="krest">✕</button>
+            <h3>Ми у:</h3>
+            <a href="https://ru.pinterest.com/">Пінтересті</a>
+            <a href="https://www.instagram.com/">Інстаграммі</a>
+            <a href="https://www.youtube.com/?app=desktop&hl=ru">Ютубі</a>
+        </div>
+    </div>
+        </article>
+
+        <article id="masterClassi">
+            <h2>Майстер-класи</h2>
+            <div class="kak">
+            <div class="clas">
+                <img src="images/MasterClas1.jpg" alt="">
+                <h3>Майстер-клас з малювання гуашшю</h3>
+                <p>Відкрий для себе магію гуаші! Навчимося змішувати яскраві кольори, створювати об'єм та переносити красу навколишнього світу на папір за допомогою густих та насичених мазків.</p>
+            </div>
+            <div class="clas">
+                <img src="images/MasterClas2.jpg" alt="">
+                <h3>Майстер-клас з пап'є-маше</h3>
+                <p>Перетвори звичайний папір на витвір мистецтва! Дізнайся, як створювати унікальні фігурки та предмети декору, що вражають своєю фактурою та міцністю. Твори без меж!</p>
+            </div>
+            <div class="clas">
+                <img src="images/MasterClas3.jpg" alt="">
+                <h3>Майстер-клас з ліплення глиною</h3>
+                <p>Відчуй справжню магію творчості. Під час занять ти опануєш техніку роботи з глиною, створиш власну керамічну чашку чи статуетку та відчуєш гармонію природного матеріалу.</p>
+            </div>
+            <div class="clas">
+                <img src="images/MasterClas4.jpg" alt="">
+                <h3>Майстер-клас з онлайн-малювання</h3>
+                <p>Майбутнє мистецтва — у твоїх руках! Освой професійні інструменти цифрового малювання, навчися працювати з программою щоб створювати неймовірні ілюстрації.</p>
+            </div>
+            </div>
+        </article>
+
+        <article id="istoriya">
+            <h2>Наша історія</h2>
+            <p class="tat">Виникнення платформи ArtSpace стало логічним результатом трансформації невеликої творчої спільноти на базі креативної майстерні у повноцінну цифрову екосистему. Ініціативна група, до складу якої 
+               увійшли Марко, Соломія та Данило, протягом тривалого часу займалася індивідуальними практиками — від керамічного мистецтва та роботи з пап'є-маше до цифрового ілюстрування. Однак з часом виникла 
+               потреба в ефективнішому інструменті для консолідації аудиторії та систематизації освітнього контенту.
+               Фундаментом проекту стала ідея інтеграції традиційних ремесел із сучасними технологічними методами навчання. Розробка сайту була зумовлена необхідністю виходу за межі локальних взаємодій та 
+               створення єдиного візуального простору, де потенційні учасники майстер-класів могли б отримати вичерпну інформацію про кожен напрям діяльності. Завдяки розподілу функцій — технічному проектуванню
+               інтерфейсів, створенню контенту та адаптації методичних матеріалів — команда змогла трансформувати інтуїтивний творчий процес у структурований користувацький досвід.
+               Сьогодні ArtSpace функціонує як майданчик, що нівелює бар'єри між майстром та учнем, пропонуючи прозору навігацію та чітку взаємодію з освітніми продуктами. Цей проект є не лише вітриною
+               результатів спільної роботи, а й свідомим кроком у розвитку креативної індустрії, де інноваційні підходи до веб-дизайну гармонійно доповнюють класичні форми мистецтва, забезпечуючи сталий розвиток спільноти в цифровому середовищі.</p>
+               <button data-modal-open3>Зв'язатись з групою</button>
+            <div class="backdrop is-hidden" data-modal3>
+            <div class="modal">
+            <button data-modal-close3 class="krest">✕</button>
+            <h3>Контакти</h3>
+            <h4>Номер Марка: +380785492748</h4>
+            <h4>Номер Данила: +38035482047</h4>
+            <h4>Номер Соломії: +38044639322</h4>
+        </div>
+    </div>
+        </article>
+    </main>
+    <footer id="kontakts"> 
+        <img src="images/logotip.jpg" alt="">
+        <ul>
+            <li><a href="#GolovniEkran">Головний екран</a></li>
+            <li><a href="#galereya">Галерея робіт</a></li>
+            <li><a href="#masterClassi">Майстер-класи</a></li>
+            <li><a href="#istoriya">Наша історія</a></li>
+            <li><a href="#kontakts">Контакти</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open]"),
+                closeModalBtn: document.querySelector("[data-modal-close]"),
+                modal: document.querySelector("[data-modal]"),
+            };
+
+            if (refs.openModalBtn && refs.closeModalBtn && refs.modal) {
+                refs.openModalBtn.addEventListener("click", toggleModal);
+                refs.closeModalBtn.addEventListener("click", toggleModal);
+
+                function toggleModal() {
+                    refs.modal.classList.toggle("is-hidden");
+                }
+            } else {
+                console.error("Єлементі модального вікна не знайдені!");
+            }
+
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open2]"),
+                closeModalBtn: document.querySelector("[data-modal-close2]"),
+                modal: document.querySelector("[data-modal2]"),
+            };
+
+            if (refs.openModalBtn && refs.closeModalBtn && refs.modal) {
+                refs.openModalBtn.addEventListener("click", toggleModal);
+                refs.closeModalBtn.addEventListener("click", toggleModal);
+
+                function toggleModal() {
+                    refs.modal.classList.toggle("is-hidden");
+                }
+            } else {
+                console.error("Єлементі модального вікна не знайдені!");
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open3]"),
+                closeModalBtn: document.querySelector("[data-modal-close3]"),
+                modal: document.querySelector("[data-modal3]"),
+            };
+
+            if (refs.openModalBtn && refs.closeModalBtn && refs.modal) {
+                refs.openModalBtn.addEventListener("click", toggleModal);
+                refs.closeModalBtn.addEventListener("click", toggleModal);
+
+                function toggleModal() {
+                    refs.modal.classList.toggle("is-hidden");
+                }
+            } else {
+                console.error("Єлементі модального вікна не знайдені!");
+            }
+        });
+
+    </script>
+</body>
+</html>
